@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Portfolio of Anes Matallah, a Computer Science student learning Python, automation, and software development." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header" id="site-header">
+    <nav class="nav-container">
+      <a href="index.html" class="nav-logo">ANES<span>.DEV</span></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="weanas.html" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="contact.html" class="nav-link nav-cta">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===================== HERO ===================== -->
+    <section id="home" class="hero-section">
+      <div class="hero-grid" id="hero-grid">
+
+        <!-- Block 1: Main Intro -->
+        <div class="hero-block hero-intro">
+          <div class="hero-intro-inner">
+            <h1 class="hero-name anim-fade-up">
+              Anes Matallah
+              <span class="hero-headline-word">Computer Science Student</span>
+            </h1>
+            <p class="hero-sub anim-fade-up" style="--delay:0.3s">
+              Passionate Computer Science student exploring programming, problem-solving, automation, and data analysis.
+            </p>
+            <a href="contact.html" class="hero-cta anim-fade-up" style="--delay:0.5s">
+              <span class="hero-cta-text">Initiate Contact</span>
+              <span class="hero-cta-icon"><i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Removed Block 2: Vertical texture image per user request -->
+
+        <!-- Block 3: Profile photo -->
+        <!-- FIX: Replace "your-photo.jpg" with your actual portrait image filename -->
+        <div class="hero-block hero-img-profile parallax-block">
+          <img src="my-anas.png.jpg" alt="Anes Matallah Profile Photo" class="parallax-img" data-speed="0.08"
+            id="profile-img" />
+        </div>
+
+        <!-- Block 4: Square detail -->
+        <div class="hero-block hero-img-detail parallax-block">
+          <img src="" alt="Detail" class="parallax-img" data-speed="0.12" />
+        </div>
+
+        <!-- Block 5: Abstract / mix -->
+        <div class="hero-block hero-img-abstract parallax-block">
+          <img src="" alt="Abstract" class="parallax-img" data-speed="0.2" />
+          <div class="hero-img-primary-overlay"></div>
+        </div><!-- Block 6: Bio & Details -->
+        <div class="hero-block hero-bio">
+          <div class="hero-bio-inner">
+            <div class="hero-bio-rule"></div>
+            <p class="hero-bio-text">
+              A first-year Computer Science student enthusiastic about learning Python, building projects, and applying
+              technology to solve real-world problems.
+            </p>
+            <div class="hero-meta">
+              <div class="hero-meta-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Ghardaia, Algeria</span>
+              </div>
+              <a href="mailto:anasmatalla@gmail.com" class="hero-meta-item hero-meta-link">
+                <i class="fa-solid fa-envelope"></i>
+                <span>anasmatalla@gmail.com</span>
+                <i class="fa-solid fa-arrow-up-right hero-meta-arrow"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/anes-matallah-5518b6398?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                target="_blank" rel="noopener" class="hero-meta-item hero-meta-link">
+                <i class="fa-brands fa-linkedin"></i>
+                <span>LinkedIn</span>
+                <i class="fa-solid fa-arrow-up-right hero-meta-arrow"></i>
+              </a>
+              <!-- FIX 1: Changed target="_white" → target="_blank" -->
+              <a href="https://www.instagram.com/anas__mata/" target="_blank" rel="noopener"
+                class="hero-meta-item hero-meta-link">
+                <i class="fa-brands fa-instagram"></i>
+                <span>Instagram</span>
+                <i class="fa-solid fa-arrow-up-right hero-meta-arrow"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ME ===================== -->
+    <section id="about" class="about-section">
+      <div class="section-container">
+        <div class="about-inner reveal">
+          <h2 class="section-heading">About Me</h2>
+          <div class="section-rule"></div>
+          <p class="about-text">
+            I am Anes Matallah, a first-year Computer Science student at University. I'm passionate about programming,
+            problem-solving, and using technology to automate tasks and analyze data. My goal is to become a skilled
+            developer by continuously learning new languages and frameworks, and building practical projects that make a
+            difference.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section id="skills" class="skills-section">
+      <div class="section-container">
+        <div class="skills-layout">
+
+          <!-- Sticky sidebar -->
+          <div class="skills-sidebar">
+            <div class="skills-sidebar-inner reveal">
+              <h2 class="section-heading">
+                Skills &<br /><span class="accent">Learning</span>
+              </h2>
+              <div class="section-rule"></div>
+              <p class="section-desc">
+                My current programming skills, tools I use, and technologies I'm actively learning as a Computer Science
+                student.
+              </p>
+            </div>
+          </div>
+
+          <!-- Scrolling skills -->
+          <div class="skills-content">
+            <!-- Highlighted skills grid -->
+            <div class="skills-grid">
+              <div class="skill-card reveal">
+                <div class="skill-card-accent"></div>
+                <div class="skill-card-top">
+                  <h3 class="skill-name">Python</h3>
+                  <span class="skill-category">Programming</span>
+                </div>
+                <div class="skill-card-bottom"><span class="skill-level">Beginner</span>
+                  <span class="skill-years">1 <span class="accent">YR</span></span>
+                </div>
+              </div>
+              <div class="skill-card reveal" style="--reveal-delay:0.1s">
+                <div class="skill-card-accent"></div>
+                <div class="skill-card-top">
+                  <h3 class="skill-name">NumPy</h3>
+                  <span class="skill-category">Programming</span>
+                </div>
+                <div class="skill-card-bottom">
+                  <span class="skill-level">Beginner</span>
+                  <span class="skill-years">1 <span class="accent">YR</span></span>
+                </div>
+              </div>
+              <div class="skill-card reveal" style="--reveal-delay:0.2s">
+                <div class="skill-card-accent"></div>
+                <div class="skill-card-top">
+                  <h3 class="skill-name">Git</h3>
+                  <span class="skill-category">Tools</span>
+                </div>
+                <div class="skill-card-bottom">
+                  <span class="skill-level">Beginner</span>
+                  <span class="skill-years">1 <span class="accent">YR</span></span>
+                </div>
+              </div>
+              <!-- FIX 2: Corrected broken <1 tag — properly escaped as "&lt;1" -->
+              <div class="skill-card reveal" style="--reveal-delay:0.3s">
+                <div class="skill-card-accent"></div>
+                <div class="skill-card-top">
+                  <h3 class="skill-name">HTML &amp; CSS</h3>
+                  <span class="skill-category">Currently Learning</span>
+                </div>
+                <div class="skill-card-bottom">
+                  <span class="skill-level">Beginner</span>
+                  <span class="skill-years">&lt;1 <span class="accent">YR</span></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="skills-cloud reveal">
+              <h4 class="skills-cloud-title">Other Skills &amp; Interests</h4>
+              <div class="skills-tags">
+                <span class="skill-tag">VS Code</span>
+                <span class="skill-tag">Data Analysis</span>
+                <span class="skill-tag">Automation</span>
+                <span class="skill-tag">Problem Solving</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">n8n</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section id="projects" class="projects-section">
+      <div class="section-container">
+        <div class="projects-header reveal">
+          <h2 class="section-heading-lg">
+            My<br />Projects
+          </h2>
+        </div>
+
+        <div class="projects-list">
+
+          <!-- FIX 3: Standardised GitHub username to "anesmatallah" — update if different -->
+          <div class="project-item reveal">
+            <h3 class="project-title">Sports Data Analyzer</h3>
+            <p class="project-desc">
+              A Python script that reads sports statistics from CSV files, performs data analysis using NumPy to
+              calculate averages, totals, and trends, and generates simple reports.
+            </p>
+            <div class="project-tech">Technologies: Python, NumPy</div>
+            <a href="https://github.com/anesmatallah/sports-data-analyzer" class="project-link" target="_blank"
+              rel="noopener">
+              View on GitHub <i class="fa-solid fa-arrow-up-right"></i>
+            </a>
+          </div>
+
+          <div class="project-item reveal">
+            <h3 class="project-title">Simple Python Game</h3>
+            <p class="project-desc">An interactive tic-tac-toe game built in Python, featuring a command-line interface,
+              game logic, and basic
+              AI opponent for single-player mode.
+            </p>
+            <div class="project-tech">Technologies: Python</div>
+            <!-- FIX 3: Changed "anas-mata" → "anesmatallah" to match your consistent username -->
+            <a href="https://github.com/anesmatallah/python-tic-tac-toe" class="project-link" target="_blank"
+              rel="noopener">
+              View on GitHub <i class="fa-solid fa-arrow-up-right"></i>
+            </a>
+          </div>
+
+          <div class="project-item reveal">
+            <h3 class="project-title">Automation Workflow</h3>
+            <p class="project-desc">
+              A simple automation project using n8n to connect APIs, automate repetitive tasks like data syncing between
+              services, and send notifications.
+            </p>
+            <div class="project-tech">Technologies: n8n, APIs (soon)</div>
+            <a href="#" class="project-link" target="_blank" rel="noopener">View on GitHub <i
+                class="fa-solid fa-arrow-up-right"></i>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EXPERIENCE ===================== -->
+    <section id="experience" class="experience-section">
+      <div class="section-container">
+        <div class="experience-header reveal">
+          <h2 class="section-heading-lg">
+            My<br />Journey
+          </h2>
+        </div>
+
+        <div class="experience-list">
+
+          <div class="exp-item reveal">
+            <div class="exp-meta">
+              <div class="exp-years">2026 <span class="exp-dash">—</span> Present</div>
+              <span class="exp-type">Full-Time</span>
+              <span class="exp-loc">Laghouat, Algeria</span>
+            </div>
+            <div class="exp-role">
+              <h3 class="exp-title">Student</h3>
+              <p class="exp-company">University</p>
+            </div>
+            <div class="exp-details">
+              <p class="exp-desc">
+                Currently pursuing a Bachelor's degree in Computer Science, focusing on programming fundamentals, data
+                structures, algorithms, and software development. Actively learning through coursework and building
+                personal projects.
+              </p>
+              <!-- FIX 4: Removed dead href="#" — replace with your university URL or remove the link -->
+              <!-- <a href="https://your-university-website.dz" class="exp-link" target="_blank" rel="noopener">
+                Visit University <i class="fa-solid fa-arrow-up-right"></i>
+              </a> -->
+            </div>
+          </div>
+
+          <div class="exp-item reveal">
+            <div class="exp-meta">
+              <div class="exp-years">2024 <span class="exp-dash">—</span> 2025</div>
+              <span class="exp-type">Preparatory Year</span>
+              <span class="exp-loc">Ghardaia, Algeria</span>
+            </div>
+            <div class="exp-role">
+              <h3 class="exp-title">Science Preparatory Student</h3>
+              <p class="exp-company">Preparatory School</p>
+            </div>
+            <div class="exp-details">
+              <p class="exp-desc">
+                Completed preparatory studies in mathematics and physics, building a strong foundation in analytical
+                thinking and problem-solving skills that prepared me for Computer Science studies.
+              </p>
+            </div>
+          </div>
+
+          <div class="exp-item reveal">
+            <div class="exp-meta">
+              <div class="exp-years">2020 <span class="exp-dash">—</span> 2024</div>
+              <span class="exp-type">High School</span><span class="exp-loc">Ghardaia, Algeria</span>
+            </div>
+            <div class="exp-role">
+              <h3 class="exp-title">High School Student</h3>
+              <p class="exp-company">Local High School</p>
+            </div>
+            <div class="exp-details">
+              <p class="exp-desc">
+                Graduated with a focus on mathematics and science, developing an interest in technology and programming
+                through self-study and basic coding projects.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== IMAGE BREAK ===================== -->
+    <section class="image-break parallax-block">
+      <img src="https://static.wixstatic.com/media/760b7b_c8ac74965bcc41a6937c8794d44e90c3~mv2.png" alt="Atmospheric"
+        class="parallax-img image-break-img" data-speed="0.25" />
+      <div class="image-break-overlay">
+        <h2 class="image-break-text">Learning &amp; Building</h2>
+      </div>
+    </section>
+
+    <!-- ===================== CTA ===================== -->
+    <section class="cta-section">
+      <div class="cta-line"></div>
+      <div class="cta-inner reveal">
+        <h2 class="cta-heading">
+          Let's Connect<br />
+          and<br />
+          <em class="cta-accent">Collaborate</em>
+        </h2>
+        <p class="cta-sub">
+          Open to learning opportunities, project collaborations, and discussions about technology and programming.
+        </p>
+        <a href="contact.html" class="cta-btn">
+          <span>Start a Conversation</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===================== GITHUB ===================== -->
+    <section class="github-section">
+      <div class="section-container">
+        <div class="github-inner reveal">
+          <h2 class="github-heading">Explore My Code</h2>
+          <p class="github-sub">
+            Check out my GitHub profile to see my coding projects, contributions, and learning journey in Computer
+            Science.
+          </p>
+          <!-- FIX 3: Updated GitHub link to match primary username "anesmatallah" -->
+          <a href="https://github.com/anas-mata" class="github-btn" target="_blank" rel="noopener">
+            <span>Visit GitHub</span>
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-logo">ANES<span class="accent">.DEV</span></span>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <span class="footer-copy">&copy; 2026 Anes Matallah</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
