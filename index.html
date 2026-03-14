@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,13 +12,12 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
-
 <body>
   <header class="site-header" id="site-header">
     <nav class="nav-container">
       <a href="index.html" class="nav-logo">ANES<span>.DEV</span></a>
       <ul class="nav-links" id="nav-links">
-        <li><a href="weanas.html" class="nav-link active">Home</a></li>
+        <li><a href="index.html" class="nav-link active">Home</a></li>
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#skills" class="nav-link">Skills</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
@@ -31,12 +29,9 @@
       </button>
     </nav>
   </header>
-
   <main>
-
     <section id="home" class="hero-section">
       <div class="hero-grid" id="hero-grid">
-
         <div class="hero-block hero-intro">
           <div class="hero-intro-inner">
             <h1 class="hero-name anim-fade-up">
@@ -56,17 +51,13 @@
           <img src="my-anas.png.jpg" alt="Anes Matallah Profile Photo" class="parallax-img" data-speed="0.08"
             id="profile-img" />
         </div>
-
-        <!-- Block 4: Square detail -->
         <div class="hero-block hero-img-detail parallax-block">
           <img src="" alt="Detail" class="parallax-img" data-speed="0.12" />
         </div>
-
-        <!-- Block 5: Abstract / mix -->
         <div class="hero-block hero-img-abstract parallax-block">
           <img src="" alt="Abstract" class="parallax-img" data-speed="0.2" />
           <div class="hero-img-primary-overlay"></div>
-        </div><!-- Block 6: Bio & Details -->
+        </div>
         <div class="hero-block hero-bio">
           <div class="hero-bio-inner">
             <div class="hero-bio-rule"></div>
@@ -90,7 +81,6 @@
                 <span>LinkedIn</span>
                 <i class="fa-solid fa-arrow-up-right hero-meta-arrow"></i>
               </a>
-              <!-- FIX 1: Changed target="_white" → target="_blank" -->
               <a href="https://www.instagram.com/anas__mata/" target="_blank" rel="noopener"
                 class="hero-meta-item hero-meta-link">
                 <i class="fa-brands fa-instagram"></i>
@@ -100,11 +90,8 @@
             </div>
           </div>
         </div>
-
       </div>
     </section>
-
-    <!-- ===================== ABOUT ME ===================== -->
     <section id="about" class="about-section">
       <div class="section-container">
         <div class="about-inner reveal">
@@ -119,13 +106,9 @@
         </div>
       </div>
     </section>
-
-    <!-- ===================== SKILLS ===================== -->
     <section id="skills" class="skills-section">
       <div class="section-container">
         <div class="skills-layout">
-
-          <!-- Sticky sidebar -->
           <div class="skills-sidebar">
             <div class="skills-sidebar-inner reveal">
               <h2 class="section-heading">
@@ -138,10 +121,7 @@
               </p>
             </div>
           </div>
-
-          <!-- Scrolling skills -->
           <div class="skills-content">
-            <!-- Highlighted skills grid -->
             <div class="skills-grid">
               <div class="skill-card reveal">
                 <div class="skill-card-accent"></div>
@@ -175,7 +155,6 @@
                   <span class="skill-years">1 <span class="accent">YR</span></span>
                 </div>
               </div>
-              <!-- FIX 2: Corrected broken <1 tag — properly escaped as "&lt;1" -->
               <div class="skill-card reveal" style="--reveal-delay:0.3s">
                 <div class="skill-card-accent"></div>
                 <div class="skill-card-top">
@@ -188,7 +167,6 @@
                 </div>
               </div>
             </div>
-
             <div class="skills-cloud reveal">
               <h4 class="skills-cloud-title">Other Skills &amp; Interests</h4>
               <div class="skills-tags">
@@ -201,12 +179,9 @@
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
-
-    <!-- ===================== PROJECTS ===================== -->
     <section id="projects" class="projects-section">
       <div class="section-container">
         <div class="projects-header reveal">
@@ -214,10 +189,7 @@
             My<br />Projects
           </h2>
         </div>
-
         <div class="projects-list">
-
-          <!-- FIX 3: Standardised GitHub username to "anesmatallah" — update if different -->
           <div class="project-item reveal">
             <h3 class="project-title">Sports Data Analyzer</h3>
             <p class="project-desc">
@@ -230,7 +202,6 @@
               View on GitHub <i class="fa-solid fa-arrow-up-right"></i>
             </a>
           </div>
-
           <div class="project-item reveal">
             <h3 class="project-title">Simple Python Game</h3>
             <p class="project-desc">An interactive tic-tac-toe game built in Python, featuring a command-line interface,
@@ -238,13 +209,11 @@
               AI opponent for single-player mode.
             </p>
             <div class="project-tech">Technologies: Python</div>
-            <!-- FIX 3: Changed "anas-mata" → "anesmatallah" to match your consistent username -->
             <a href="https://github.com/anas-mata/python-tic-tac-toe" class="project-link" target="_blank"
               rel="noopener">
               View on GitHub <i class="fa-solid fa-arrow-up-right"></i>
             </a>
           </div>
-
           <div class="project-item reveal">
             <h3 class="project-title">Automation Workflow</h3>
             <p class="project-desc">
@@ -256,12 +225,9 @@
                 class="fa-solid fa-arrow-up-right"></i>
             </a>
           </div>
-
         </div>
       </div>
     </section>
-
-    <!-- ===================== EXPERIENCE ===================== -->
     <section id="experience" class="experience-section">
       <div class="section-container">
         <div class="experience-header reveal">
@@ -269,9 +235,7 @@
             My<br />Journey
           </h2>
         </div>
-
         <div class="experience-list">
-
           <div class="exp-item reveal">
             <div class="exp-meta">
               <div class="exp-years">2026 <span class="exp-dash">—</span> Present</div>
@@ -288,13 +252,8 @@
                 structures, algorithms, and software development. Actively learning through coursework and building
                 personal projects.
               </p>
-              <!-- FIX 4: Removed dead href="#" — replace with your university URL or remove the link -->
-              <!-- <a href="https://your-university-website.dz" class="exp-link" target="_blank" rel="noopener">
-                Visit University <i class="fa-solid fa-arrow-up-right"></i>
-              </a> -->
             </div>
           </div>
-
           <div class="exp-item reveal">
             <div class="exp-meta">
               <div class="exp-years">2024 <span class="exp-dash">—</span> 2025</div>
@@ -329,12 +288,9 @@
               </p>
             </div>
           </div>
-
         </div>
       </div>
     </section>
-
-    <!-- ===================== IMAGE BREAK ===================== -->
     <section class="image-break parallax-block">
       <img src="https://static.wixstatic.com/media/760b7b_c8ac74965bcc41a6937c8794d44e90c3~mv2.png" alt="Atmospheric"
         class="parallax-img image-break-img" data-speed="0.25" />
@@ -342,8 +298,6 @@
         <h2 class="image-break-text">Learning &amp; Building</h2>
       </div>
     </section>
-
-    <!-- ===================== CTA ===================== -->
     <section class="cta-section">
       <div class="cta-line"></div>
       <div class="cta-inner reveal">
@@ -361,8 +315,6 @@
         </a>
       </div>
     </section>
-
-    <!-- ===================== GITHUB ===================== -->
     <section class="github-section">
       <div class="section-container">
         <div class="github-inner reveal">
@@ -371,7 +323,6 @@
             Check out my GitHub profile to see my coding projects, contributions, and learning journey in Computer
             Science.
           </p>
-          <!-- FIX 3: Updated GitHub link to match primary username "anesmatallah" -->
           <a href="https://github.com/anas-mata" class="github-btn" target="_blank" rel="noopener">
             <span>Visit GitHub</span>
             <i class="fa-brands fa-github"></i>
@@ -379,10 +330,7 @@
         </div>
       </div>
     </section>
-
   </main>
-
-  <!-- ===================== FOOTER ===================== -->
   <footer class="site-footer">
     <div class="footer-inner">
       <span class="footer-logo">ANES<span class="accent">.DEV</span></span>
@@ -397,7 +345,6 @@
       <span class="footer-copy">&copy; 2026 Anes Matallah</span>
     </div>
   </footer>
-
   <script src="script.js"></script>
 </body>
 
