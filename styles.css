@@ -1,28 +1,37 @@
-/* ============================================================
-   DESIGN SYSTEM — ProfilePro Portfolio
-   Inspired by the Wix Vibe "ProfilePro" React design
-   ============================================================ */
-
-/* --- TOKENS --- */
 :root {
   --bg: #0e0e0e;
   --bg-alt: #161616;
   --fg: #f0ede8;
   --fg-dim: rgba(240, 237, 232, 0.55);
   --primary: #c8a96e;
-  /* warm gold */
+  --primary-rgb: 200, 169, 110;
   --border: rgba(240, 237, 232, 0.1);
   --grid-gap: 1px;
   --font-head: 'Bebas Neue', sans-serif;
   --font-body: 'Inter', sans-serif;
+  --font-arabic: 'Cairo', sans-serif;
   --nav-h: 72px;
   --max-w: 1600px;
   --section-px: clamp(1.5rem, 6vw, 8rem);
   --section-py: clamp(4rem, 10vw, 10rem);
   --ease: cubic-bezier(0.21, 0.47, 0.32, 0.98);
+  --shadow-glow: 0 0 20px rgba(var(--primary-rgb), 0.15);
 }
 
-/* --- RESET --- */
+[dir="rtl"] {
+  --font-head: 'Cairo', sans-serif;
+  --font-body: 'Cairo', sans-serif;
+}
+
+[dir="rtl"] body {
+  text-align: right;
+}
+
+[dir="rtl"] .nav-logo span {
+  margin-right: 0.2rem;
+  margin-left: 0;
+}
+
 *,
 *::before,
 *::after {
@@ -72,6 +81,51 @@ ul {
   max-width: var(--max-w);
   margin-inline: auto;
   padding-inline: var(--section-px);
+}
+
+/* Glassmorphism utility */
+.glass-card {
+  background: rgba(22, 22, 22, 0.5);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(240, 237, 232, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  padding: clamp(2rem, 4vw, 3rem);
+  transition: transform 0.4s var(--ease), border-color 0.4s, box-shadow 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200, 169, 110, 0.3), transparent);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(200, 169, 110, 0.2);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), var(--shadow-glow);
+}
+
+.glass-card:hover::before {
+  opacity: 1;
+}
+
+/* Text Gradients */
+.text-gradient {
+  background: linear-gradient(to right, #f0ede8, var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 /* ============================================================
@@ -167,6 +221,31 @@ ul {
   display: none;
 }
 
+.lang-toggle {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--fg-dim);
+  padding: 0.4rem 0.8rem;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s var(--ease);
+  border-radius: 4px;
+}
+
+.lang-toggle:hover {
+  border-color: var(--primary);
+  color: var(--fg);
+}
+
+.lang-icon {
+  font-size: 0.9rem;
+}
+
 /* Hamburger */
 .hamburger {
   display: none;
@@ -197,10 +276,6 @@ ul {
 .hamburger.open span:nth-child(3) {
   transform: translateY(-6.5px) rotate(-45deg);
 }
-
-/* ============================================================
-   HERO — Asymmetric Grid
-   ============================================================ */
 .hero-section {
   padding-top: calc(var(--nav-h) + 3rem);
   min-height: 100vh;
@@ -216,7 +291,6 @@ ul {
   min-height: calc(100vh - var(--nav-h) - 3rem);
 }
 
-/* Block layout */
 .hero-intro {
   grid-column: span 2;
   grid-row: 1;
@@ -261,8 +335,6 @@ ul {
   position: relative;
   overflow: hidden;
 }
-
-/* Intro content */
 .hero-intro {
   overflow: hidden;
 }
@@ -483,19 +555,22 @@ ul {
 
 .skill-card {
   position: relative;
-  background: var(--bg-alt);
+  background: rgba(22, 22, 22, 0.5); /* Matching glass-card base */
   padding: clamp(1.5rem, 3vw, 2.5rem);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 1px solid transparent;
-  transition: border-color 0.5s;
+  border: 1px solid rgba(240, 237, 232, 0.05); /* Matching glass-card base */
+  transition: transform 0.4s var(--ease), border-color 0.4s, box-shadow 0.4s;
   min-height: 180px;
+  border-radius: 4px; /* Optional: adds a slight softening to matching luxury feel */
 }
 
 .skill-card:hover {
-  border-color: var(--border);
+  transform: translateY(-5px);
+  border-color: rgba(200, 169, 110, 0.2);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), var(--shadow-glow);
 }
 
 .skill-card-accent {
@@ -504,13 +579,15 @@ ul {
   right: -4rem;
   width: 8rem;
   height: 8rem;
-  background: rgba(200, 169, 110, 0.06);
+  background: radial-gradient(circle, rgba(200, 169, 110, 0.15) 0%, transparent 70%);
   border-radius: 50%;
-  transition: transform 0.7s;
+  transition: transform 0.7s, opacity 0.7s;
+  opacity: 0.5;
 }
 
 .skill-card:hover .skill-card-accent {
-  transform: scale(1.5);
+  transform: scale(2);
+  opacity: 1;
 }
 
 .skill-card-top {
@@ -579,18 +656,109 @@ ul {
 }
 
 .skill-tag {
-  padding: 0.5rem 1.25rem;
-  border: 1px solid var(--border);
+  padding: 0.6rem 1.4rem;
+  background: rgba(22, 22, 22, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(240, 237, 232, 0.1);
   font-size: 0.85rem;
+  letter-spacing: 0.05em;
   cursor: default;
-  transition: background 0.3s, color 0.3s;
+  transition: all 0.3s var(--ease);
+  color: var(--fg-dim);
+  border-radius: 4px;
 }
 
 .skill-tag:hover {
-  background: var(--fg);
-  color: var(--bg);
+  background: rgba(200, 169, 110, 0.1);
+  border-color: var(--primary);
+  color: var(--primary);
+  box-shadow: 0 0 15px rgba(200, 169, 110, 0.2);
+  transform: translateY(-2px);
 }
 
+/* ============================================================
+   PROJECTS SECTION (New specific styles)
+   ============================================================ */
+.projects-section {
+  padding-block: var(--section-py);
+  background: var(--bg-alt);
+  border-top: 1px solid var(--border);
+  position: relative;
+  z-index: 2;
+}
+
+.projects-header {
+  margin-bottom: 4rem;
+}
+
+.projects-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.project-item {
+  /* Using global glass-card via HTML update, but adding specific interior spacing */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.project-title {
+  font-family: var(--font-head);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.project-desc {
+  font-size: 0.95rem;
+  color: var(--fg-dim);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.project-tech {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--fg);
+  padding: 0.8rem 1.5rem;
+  border: 1px solid rgba(240, 237, 232, 0.2);
+  width: fit-content;
+  transition: all 0.3s var(--ease);
+}
+
+.project-link:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--bg);
+  box-shadow: 0 5px 15px rgba(200, 169, 110, 0.3);
+}
+
+.project-link i {
+  transition: transform 0.3s;
+}
+
+.project-link:hover i {
+  transform: translate(3px, -3px);
+}
+[dir="rtl"] .project-link:hover i {
+  transform: translate(-3px, -3px);
+}
 /* ============================================================
    EXPERIENCE SECTION
    ============================================================ */
@@ -617,32 +785,48 @@ ul {
 
 .exp-item {
   display: grid;
-  grid-template-columns: 1fr 1.2fr 1.8fr;
+  grid-template-columns: 2rem 1.2fr 1.8fr;
   gap: clamp(1.5rem, 4vw, 5rem);
   padding-block: clamp(2rem, 4vw, 4rem);
-  border-top: 1px solid var(--border);
   align-items: start;
   position: relative;
-  transition: border-color 0.5s;
+  transition: transform 0.4s var(--ease), border-color 0.4s;
+  padding-left: 1rem;
 }
 
-.exp-item::before {
+[dir="rtl"] .exp-item {
+  padding-left: 0;
+  padding-right: 1rem;
+}
+
+/* Timeline vertical line */
+.exp-item::after {
   content: '';
   position: absolute;
-  inset: 0;
-  background: rgba(240, 237, 232, 0.03);
-  opacity: 0;
-  transition: opacity 0.5s;
-  pointer-events: none;
+  top: 0;
+  bottom: 0;
+  left: 3rem;
+  width: 1px;
+  background: var(--border);
   z-index: 0;
 }
 
-.exp-item:hover {
-  border-color: rgba(240, 237, 232, 0.25);
+[dir="rtl"] .exp-item::after {
+  left: auto;
+  right: 3rem;
 }
 
-.exp-item:hover::before {
-  opacity: 1;
+/* Hide line on the last item to prevent overflow */
+.exp-item:last-child::after {
+  background: linear-gradient(to bottom, var(--border), transparent);
+}
+
+.exp-item:hover {
+  transform: translateX(10px);
+}
+
+[dir="rtl"] .exp-item:hover {
+  transform: translateX(-10px);
 }
 
 .exp-meta {
@@ -651,6 +835,31 @@ ul {
   gap: 0.5rem;
   position: relative;
   z-index: 1;
+}
+
+/* Timeline dot */
+.exp-meta::before {
+  content: '';
+  position: absolute;
+  top: 0.5rem;
+  left: -2.3rem;
+  width: 12px;
+  height: 12px;
+  background: var(--bg);
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  z-index: 2;
+  transition: background 0.4s, box-shadow 0.4s;
+}
+
+[dir="rtl"] .exp-meta::before {
+  left: auto;
+  right: -2.3rem;
+}
+
+.exp-item:hover .exp-meta::before {
+  background: var(--primary);
+  box-shadow: 0 0 15px rgba(200, 169, 110, 0.6);
 }
 
 .exp-years {
@@ -819,6 +1028,13 @@ ul {
   margin-bottom: 3.5rem;
 }
 
+.radial-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(200, 169, 110, 0.05) 0%, transparent 60%);
+  pointer-events: none;
+}
+
 .cta-btn {
   position: relative;
   display: inline-flex;
@@ -872,30 +1088,65 @@ ul {
    CONTACT PAGE
    ============================================================ */
 .contact-hero {
-  background: var(--bg-alt);
-  padding-top: calc(var(--nav-h) + 4rem);
-  padding-bottom: 5rem;
+  position: relative;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #000;
+  padding-top: var(--nav-h);
+}
+
+.contact-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('cinematic_contact_hero.png');
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.1);
+  animation: heroPulse 20s infinite alternate linear;
+}
+
+@keyframes heroPulse {
+  from { transform: scale(1.1) translate(0, 0); }
+  to { transform: scale(1.2) translate(-2%, -2%); }
+}
+
+.contact-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(14, 14, 14, 0.4), var(--bg));
+  z-index: 1;
+}
+
+.relative-z {
+  position: relative;
+  z-index: 2;
 }
 
 .contact-hero-title {
   font-family: var(--font-head);
-  font-size: clamp(3.5rem, 8vw, 7rem);
-  letter-spacing: -0.01em;
+  font-size: clamp(3.5rem, 8vw, 7.5rem);
+  letter-spacing: -0.02em;
   margin-bottom: 1.5rem;
+  color: var(--fg);
+  text-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 .contact-hero-rule {
-  width: 6rem;
+  width: 8rem;
   height: 2px;
   background: var(--primary);
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 0 15px rgba(var(--primary-rgb), 0.5);
 }
 
 .contact-hero-sub {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: var(--fg-dim);
-  line-height: 1.7;
-  max-width: 42rem;
+  line-height: 1.8;
+  max-width: 38rem;
+  font-weight: 300;
 }
 
 .contact-body {
@@ -912,9 +1163,23 @@ ul {
 
 /* Info panel */
 .contact-info {
-  background: var(--bg-alt);
-  padding: clamp(1.5rem, 3vw, 3rem);
+  background: rgba(22, 22, 22, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: clamp(2rem, 4vw, 3.5rem);
   border: 1px solid var(--border);
+  box-shadow: var(--shadow-glow);
+  transition: transform 0.4s var(--ease), border-color 0.4s;
+}
+
+.contact-info:hover {
+  transform: translateY(-5px);
+  border-color: rgba(var(--primary-rgb), 0.3);
+}
+
+[dir="rtl"] .contact-info {
+  border-right: 1px solid var(--border);
+  border-left: none;
 }
 
 .contact-info-header {
@@ -925,15 +1190,16 @@ ul {
 }
 
 .contact-icon-wrap {
-  width: 3rem;
-  height: 3rem;
+  width: 3.5rem;
+  height: 3.5rem;
   background: var(--primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: var(--bg);
   flex-shrink: 0;
+  box-shadow: 0 10px 20px rgba(var(--primary-rgb), 0.2);
 }
 
 .contact-info-title {
@@ -987,25 +1253,38 @@ ul {
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 0.85rem 1rem;
-  background: var(--bg-alt);
-  border: 1px solid rgba(200, 169, 110, 0.2);
+  padding: 1.1rem 1.2rem;
+  background: rgba(22, 22, 22, 0.4);
+  border: 1px solid var(--border);
   color: var(--fg);
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 1rem;
   outline: none;
   resize: none;
-  transition: border-color 0.3s;
+  transition: all 0.3s var(--ease);
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   border-color: var(--primary);
+  background: rgba(22, 22, 22, 0.8);
+  box-shadow: 0 0 15px rgba(var(--primary-rgb), 0.1);
+  transform: translateY(-2px);
+}
+
+[dir="rtl"] .form-group label {
+  text-align: right;
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: var(--fg-dim);
+  color: rgba(240, 237, 232, 0.3);
+  transition: color 0.3s;
+}
+
+.form-group input:focus::placeholder,
+.form-group textarea:focus::placeholder {
+  color: rgba(240, 237, 232, 0.5);
 }
 
 .form-success {
@@ -1027,22 +1306,38 @@ ul {
 .form-submit {
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.9rem 2rem;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.2rem 3rem;
   background: var(--primary);
   color: var(--bg);
   border: none;
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-family: var(--font-head);
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: opacity 0.3s, transform 0.3s;
+  transition: all 0.4s var(--ease);
   width: fit-content;
+  box-shadow: 0 10px 30px rgba(var(--primary-rgb), 0.2);
 }
 
 .form-submit:hover {
-  opacity: 0.88;
-  transform: scale(1.02);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(var(--primary-rgb), 0.4);
+  background: #d4bc8a;
+}
+
+.form-submit i {
+  transition: transform 0.3s var(--ease);
+}
+
+.form-submit:hover i {
+  transform: translate(5px, -5px);
+}
+
+[dir="rtl"] .form-submit:hover i {
+  transform: translate(-5px, -5px);
 }
 
 .form-submit:disabled {
