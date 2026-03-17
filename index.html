@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cairo:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
@@ -19,12 +19,17 @@
     <nav class="nav-container">
       <a href="index.html" class="nav-logo">ANES<span>.DEV</span></a>
       <ul class="nav-links" id="nav-links">
-        <li><a href="index.html" class="nav-link active">Home</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#experience" class="nav-link">Experience</a></li>
-        <li><a href="contact.html" class="nav-link nav-cta">Contact</a></li>
+        <li><a href="index.html" class="nav-link active" data-i18n="nav_home">Home</a></li>
+        <li><a href="#about" class="nav-link" data-i18n="nav_about">About</a></li>
+        <li><a href="#skills" class="nav-link" data-i18n="nav_skills">Skills</a></li>
+        <li><a href="#projects" class="nav-link" data-i18n="nav_projects">Projects</a></li>
+        <li><a href="#experience" class="nav-link" data-i18n="nav_experience">Experience</a></li>
+        <li><a href="contact.html" class="nav-link nav-cta" data-i18n="nav_contact">Contact</a></li>
+        <li>
+          <button id="lang-toggle" class="lang-toggle" aria-label="Toggle Language" title="Switch Language">
+            <span class="lang-icon">🌐</span> <span id="current-lang">EN</span>
+          </button>
+        </li>
       </ul>
       <button class="hamburger" id="hamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
@@ -37,14 +42,14 @@
         <div class="hero-block hero-intro">
           <div class="hero-intro-inner">
             <h1 class="hero-name anim-fade-up">
-              Anes Matallah
-              <span class="hero-headline-word">Computer Science Student</span>
+              <span data-i18n="hero_name">Anes Matallah</span>
+              <span class="hero-headline-word" data-i18n="hero_headline">Computer Science Student</span>
             </h1>
-            <p class="hero-sub anim-fade-up" style="--delay:0.3s">
+            <p class="hero-sub anim-fade-up" style="--delay:0.3s" data-i18n="hero_sub_home">
               Passionate Computer Science student exploring programming, problem-solving, automation, and data analysis.
             </p>
             <a href="contact.html" class="hero-cta anim-fade-up" style="--delay:0.5s">
-              <span class="hero-cta-text">Initiate Contact</span>
+              <span class="hero-cta-text" data-i18n="hero_cta_home">Initiate Contact</span>
               <span class="hero-cta-icon"><i class="fa-solid fa-arrow-right"></i></span>
             </a>
           </div>
@@ -63,14 +68,14 @@
         <div class="hero-block hero-bio">
           <div class="hero-bio-inner">
             <div class="hero-bio-rule"></div>
-            <p class="hero-bio-text">
+            <p class="hero-bio-text" data-i18n="hero_bio_text">
               A first-year Computer Science student enthusiastic about learning Python, building projects, and applying
               technology to solve real-world problems.
             </p>
             <div class="hero-meta">
               <div class="hero-meta-item">
                 <i class="fa-solid fa-location-dot"></i>
-                <span>Ghardaia, Algeria</span>
+                <span data-i18n="hero_location">Ghardaia, Algeria</span>
               </div>
               <a href="mailto:anasmatalla@gmail.com" class="hero-meta-item hero-meta-link">
                 <i class="fa-solid fa-envelope"></i>
@@ -97,9 +102,9 @@
     <section id="about" class="about-section">
       <div class="section-container">
         <div class="about-inner reveal">
-          <h2 class="section-heading">About Me</h2>
+          <h2 class="section-heading" data-i18n="about_title">About Me</h2>
           <div class="section-rule"></div>
-          <p class="about-text">
+          <p class="about-text" data-i18n="about_text">
             I am Anes Matallah, a first-year Computer Science student at University. I'm passionate about programming,
             problem-solving, and using technology to automate tasks and analyze data. My goal is to become a skilled
             developer by continuously learning new languages and frameworks, and building practical projects that make a
@@ -113,11 +118,11 @@
         <div class="skills-layout">
           <div class="skills-sidebar">
             <div class="skills-sidebar-inner reveal">
-              <h2 class="section-heading">
+              <h2 class="section-heading" data-i18n="skills_title">
                 Skills &<br /><span class="accent">Learning</span>
               </h2>
               <div class="section-rule"></div>
-              <p class="section-desc">
+              <p class="section-desc" data-i18n="skills_desc">
                 My current programming skills, tools I use, and technologies I'm actively learning as a Computer Science
                 student.
               </p>
@@ -128,56 +133,56 @@
               <div class="skill-card reveal">
                 <div class="skill-card-accent"></div>
                 <div class="skill-card-top">
-                  <h3 class="skill-name">Python</h3>
-                  <span class="skill-category">Programming</span>
+                  <h3 class="skill-name" data-i18n="skill_python">Python</h3>
+                  <span class="skill-category" data-i18n="skill_category_prog">Programming</span>
                 </div>
-                <div class="skill-card-bottom"><span class="skill-level">Beginner</span>
-                  <span class="skill-years">1 <span class="accent">YR</span></span>
+                <div class="skill-card-bottom"><span class="skill-level" data-i18n="skill_level_beg">Beginner</span>
+                  <span class="skill-years">1 <span class="accent" data-i18n="skill_yr">YR</span></span>
                 </div>
               </div>
               <div class="skill-card reveal" style="--reveal-delay:0.1s">
                 <div class="skill-card-accent"></div>
                 <div class="skill-card-top">
-                  <h3 class="skill-name">NumPy</h3>
-                  <span class="skill-category">Programming</span>
+                  <h3 class="skill-name" data-i18n="skill_numpy">NumPy</h3>
+                  <span class="skill-category" data-i18n="skill_category_prog">Programming</span>
                 </div>
                 <div class="skill-card-bottom">
-                  <span class="skill-level">Beginner</span>
-                  <span class="skill-years">1 <span class="accent">YR</span></span>
+                  <span class="skill-level" data-i18n="skill_level_beg">Beginner</span>
+                  <span class="skill-years">1 <span class="accent" data-i18n="skill_yr">YR</span></span>
                 </div>
               </div>
               <div class="skill-card reveal" style="--reveal-delay:0.2s">
                 <div class="skill-card-accent"></div>
                 <div class="skill-card-top">
-                  <h3 class="skill-name">Git</h3>
-                  <span class="skill-category">Tools</span>
+                  <h3 class="skill-name" data-i18n="skill_git">Git</h3>
+                  <span class="skill-category" data-i18n="skill_category_tools">Tools</span>
                 </div>
                 <div class="skill-card-bottom">
-                  <span class="skill-level">Beginner</span>
-                  <span class="skill-years">1 <span class="accent">YR</span></span>
+                  <span class="skill-level" data-i18n="skill_level_beg">Beginner</span>
+                  <span class="skill-years">1 <span class="accent" data-i18n="skill_yr">YR</span></span>
                 </div>
               </div>
               <div class="skill-card reveal" style="--reveal-delay:0.3s">
                 <div class="skill-card-accent"></div>
                 <div class="skill-card-top">
-                  <h3 class="skill-name">HTML &amp; CSS</h3>
-                  <span class="skill-category">Currently Learning</span>
+                  <h3 class="skill-name" data-i18n="skill_html_css">HTML &amp; CSS</h3>
+                  <span class="skill-category" data-i18n="skill_category_learning">Currently Learning</span>
                 </div>
                 <div class="skill-card-bottom">
-                  <span class="skill-level">Beginner</span>
-                  <span class="skill-years">&lt;1 <span class="accent">YR</span></span>
+                  <span class="skill-level" data-i18n="skill_level_beg">Beginner</span>
+                  <span class="skill-years">&lt;1 <span class="accent" data-i18n="skill_yr">YR</span></span>
                 </div>
               </div>
             </div>
             <div class="skills-cloud reveal">
-              <h4 class="skills-cloud-title">Other Skills &amp; Interests</h4>
+              <h4 class="skills-cloud-title" data-i18n="skills_cloud_title">Other Skills &amp; Interests</h4>
               <div class="skills-tags">
-                <span class="skill-tag">VS Code</span>
-                <span class="skill-tag">Data Analysis</span>
-                <span class="skill-tag">Automation</span>
-                <span class="skill-tag">Problem Solving</span>
-                <span class="skill-tag">JavaScript</span>
-                <span class="skill-tag">n8n</span>
+                <span class="skill-tag" data-i18n="skill_tag_vscode">VS Code</span>
+                <span class="skill-tag" data-i18n="skill_tag_analysis">Data Analysis</span>
+                <span class="skill-tag" data-i18n="skill_tag_automation">Automation</span>
+                <span class="skill-tag" data-i18n="skill_tag_problem">Problem Solving</span>
+                <span class="skill-tag" data-i18n="skill_tag_js">JavaScript</span>
+                <span class="skill-tag" data-i18n="skill_tag_n8n">n8n</span>
               </div>
             </div>
           </div>
@@ -187,43 +192,41 @@
     <section id="projects" class="projects-section">
       <div class="section-container">
         <div class="projects-header reveal">
-          <h2 class="section-heading-lg">
-            My<br />Projects
-          </h2>
+          <h2 class="section-heading-lg"><span class="text-gradient" data-i18n="projects_title">My<br />Projects</span></h2>
         </div>
         <div class="projects-list">
-          <div class="project-item reveal">
-            <h3 class="project-title">Sports Data Analyzer</h3>
-            <p class="project-desc">
+          <div class="project-item glass-card reveal">
+            <h3 class="project-title" data-i18n="project_1_title">Sports Data Analyzer</h3>
+            <p class="project-desc" data-i18n="project_1_desc">
               A Python script that reads sports statistics from CSV files, performs data analysis using NumPy to
               calculate averages, totals, and trends, and generates simple reports.
             </p>
-            <div class="project-tech">Technologies: Python, NumPy</div>
+            <div class="project-tech" data-i18n="project_1_tech">Technologies: Python, NumPy</div>
             <a href="https://github.com/anas-mata/sports-data-analyzer" class="project-link" target="_blank"
               rel="noopener">
-              View on GitHub <i class="fa-solid fa-arrow-up-right"></i>
+              <span data-i18n="project_link">View on GitHub</span> <i class="fa-solid fa-arrow-up-right"></i>
             </a>
           </div>
-          <div class="project-item reveal">
-            <h3 class="project-title">Simple Python Game</h3>
-            <p class="project-desc">An interactive tic-tac-toe game built in Python, featuring a command-line interface,
+          <div class="project-item glass-card reveal">
+            <h3 class="project-title" data-i18n="project_2_title">Simple Python Game</h3>
+            <p class="project-desc" data-i18n="project_2_desc">An interactive tic-tac-toe game built in Python, featuring a command-line interface,
               game logic, and basic
               AI opponent for single-player mode.
             </p>
-            <div class="project-tech">Technologies: Python</div>
+            <div class="project-tech" data-i18n="project_2_tech">Technologies: Python</div>
             <a href="https://github.com/anas-mata/python-tic-tac-toe" class="project-link" target="_blank"
               rel="noopener">
-              View on GitHub <i class="fa-solid fa-arrow-up-right"></i>
+              <span data-i18n="project_link">View on GitHub</span> <i class="fa-solid fa-arrow-up-right"></i>
             </a>
           </div>
-          <div class="project-item reveal">
-            <h3 class="project-title">Automation Workflow</h3>
-            <p class="project-desc">
+          <div class="project-item glass-card reveal">
+            <h3 class="project-title" data-i18n="project_3_title">Automation Workflow</h3>
+            <p class="project-desc" data-i18n="project_3_desc">
               A simple automation project using n8n to connect APIs, automate repetitive tasks like data syncing between
               services, and send notifications.
             </p>
-            <div class="project-tech">Technologies: n8n, APIs (soon)</div>
-            <a href="#" class="project-link" target="_blank" rel="noopener">View on GitHub <i
+            <div class="project-tech" data-i18n="project_3_tech">Technologies: n8n, APIs (soon)</div>
+            <a href="#" class="project-link" target="_blank" rel="noopener"><span data-i18n="project_link">View on GitHub</span> <i
                 class="fa-solid fa-arrow-up-right"></i>
             </a>
           </div>
@@ -233,23 +236,21 @@
     <section id="experience" class="experience-section">
       <div class="section-container">
         <div class="experience-header reveal">
-          <h2 class="section-heading-lg">
-            My<br />Journey
-          </h2>
+          <h2 class="section-heading-lg"><span class="text-gradient" data-i18n="experience_title">My<br />Journey</span></h2>
         </div>
-        <div class="experience-list">
+        <div class="experience-list glass-card" style="padding: clamp(3rem, 5vw, 5rem);">
           <div class="exp-item reveal">
             <div class="exp-meta">
-              <div class="exp-years">2026 <span class="exp-dash">—</span> Present</div>
-              <span class="exp-type">Full-Time</span>
-              <span class="exp-loc">Laghouat, Algeria</span>
+              <div class="exp-years" data-i18n="exp_1_years">2026 — Present</div>
+              <span class="exp-type" data-i18n="exp_1_type">Full-Time</span>
+              <span class="exp-loc" data-i18n="exp_1_loc">Laghouat, Algeria</span>
             </div>
             <div class="exp-role">
-              <h3 class="exp-title">Student</h3>
-              <p class="exp-company">University</p>
+              <h3 class="exp-title" data-i18n="exp_1_role">Student</h3>
+              <p class="exp-company" data-i18n="exp_1_company">University</p>
             </div>
             <div class="exp-details">
-              <p class="exp-desc">
+              <p class="exp-desc" data-i18n="exp_1_desc">
                 Currently pursuing a Bachelor's degree in Computer Science, focusing on programming fundamentals, data
                 structures, algorithms, and software development. Actively learning through coursework and building
                 personal projects.
@@ -258,16 +259,16 @@
           </div>
           <div class="exp-item reveal">
             <div class="exp-meta">
-              <div class="exp-years">2024 <span class="exp-dash">—</span> 2025</div>
-              <span class="exp-type">Preparatory Year</span>
-              <span class="exp-loc">Ghardaia, Algeria</span>
+              <div class="exp-years" data-i18n="exp_2_years">2024 — 2025</div>
+              <span class="exp-type" data-i18n="exp_2_type">Preparatory Year</span>
+              <span class="exp-loc" data-i18n="exp_2_loc">Ghardaia, Algeria</span>
             </div>
             <div class="exp-role">
-              <h3 class="exp-title">Science Preparatory Student</h3>
-              <p class="exp-company">Preparatory School</p>
+              <h3 class="exp-title" data-i18n="exp_2_role">Science Preparatory Student</h3>
+              <p class="exp-company" data-i18n="exp_2_company">Preparatory School</p>
             </div>
             <div class="exp-details">
-              <p class="exp-desc">
+              <p class="exp-desc" data-i18n="exp_2_desc">
                 Completed preparatory studies in mathematics and physics, building a strong foundation in analytical
                 thinking and problem-solving skills that prepared me for Computer Science studies.
               </p>
@@ -276,93 +277,75 @@
 
           <div class="exp-item reveal">
             <div class="exp-meta">
-              <div class="exp-years">2020 <span class="exp-dash">—</span> 2024</div>
-              <span class="exp-type">High School</span><span class="exp-loc">Ghardaia, Algeria</span>
+              <div class="exp-years" data-i18n="exp_3_years">2020 — 2024</div>
+              <span class="exp-type" data-i18n="exp_3_type">High School</span><span class="exp-loc" data-i18n="exp_3_loc">Ghardaia, Algeria</span>
             </div>
             <div class="exp-role">
-              <h3 class="exp-title">High School Student</h3>
-              <p class="exp-company">Local High School</p>
+              <h3 class="exp-title" data-i18n="exp_3_role">High School Student</h3>
+              <p class="exp-company" data-i18n="exp_3_company">Local High School</p>
             </div>
             <div class="exp-details">
-              <p class="exp-desc">
+              <p class="exp-desc" data-i18n="exp_3_desc">
                 Graduated with a focus on mathematics and science, developing an interest in technology and programming
                 through self-study and basic coding projects.
               </p>
             </div>
           </div>
-
         </div>
       </div>
     </section>
-
-    <!-- ===================== IMAGE BREAK ===================== -->
     <section class="image-break parallax-block">
       <img src="https://static.wixstatic.com/media/760b7b_c8ac74965bcc41a6937c8794d44e90c3~mv2.png" alt="Atmospheric"
         class="parallax-img image-break-img" data-speed="0.25" />
       <div class="image-break-overlay">
-        <h2 class="image-break-text">Learning &amp; Building</h2>
+        <h2 class="image-break-text" data-i18n="break_text">Learning &amp; Building</h2>
       </div>
     </section>
-
-    <!-- ===================== CTA ===================== -->
     <section class="cta-section">
+      <div class="radial-bg"></div>
       <div class="cta-line"></div>
-      <div class="cta-inner reveal">
-        <h2 class="cta-heading">
-          Let's Connect<br />
-          and<br />
-          <em class="cta-accent">Collaborate</em>
-        </h2>
-        <p class="cta-sub">
+      <div class="cta-inner reveal relative-z">
+        <h2 class="cta-heading"><span class="text-gradient" data-i18n="cta_heading">Let's Connect and<br /><em class="cta-accent">Collaborate</em></span></h2>
+        <p class="cta-sub" data-i18n="cta_sub">
           Open to learning opportunities, project collaborations, and discussions about technology and programming.
         </p>
         <a href="contact.html" class="cta-btn">
-          <span>Start a Conversation</span>
+          <span data-i18n="cta_btn">Start a Conversation</span>
           <i class="fa-solid fa-arrow-right"></i>
         </a>
       </div>
     </section>
-
-    <!-- ===================== GITHUB ===================== -->
-    <section class="github-section">
-      <div class="section-container">
-        <div class="github-inner reveal">
-          <h2 class="github-heading">Explore My Code</h2>
-          <p class="github-sub">
+    <section class="github-section" style="position: relative; overflow: hidden;">
+      <div class="radial-bg"></div>
+      <div class="section-container relative-z">
+        <div class="github-inner glass-card reveal" style="text-align: center;">
+          <h2 class="github-heading"><span class="text-gradient" data-i18n="github_heading">Explore My Code</span></h2>
+          <p class="github-sub" data-i18n="github_sub" style="margin-bottom: 2rem;">
             Check out my GitHub profile to see my coding projects, contributions, and learning journey in Computer
             Science.
           </p>
           <a href="https://github.com/anas-mata" class="github-btn" target="_blank" rel="noopener">
-            <span>Visit GitHub</span>
+            <span data-i18n="github_btn">Visit GitHub</span>
             <i class="fa-brands fa-github"></i>
           </a>
         </div>
       </div>
     </section>
-
   </main>
-
-  <!-- ===================== FOOTER ===================== -->
   <footer class="site-footer">
     <div class="footer-inner">
       <span class="footer-logo">ANES<span class="accent">.DEV</span></span>
       <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html" data-i18n="nav_home">Home</a>
+        <a href="#about" data-i18n="nav_about">About</a>
+        <a href="#skills" data-i18n="nav_skills">Skills</a>
+        <a href="#projects" data-i18n="nav_projects">Projects</a>
+        <a href="#experience" data-i18n="nav_experience">Experience</a>
+        <a href="contact.html" data-i18n="nav_contact">Contact</a>
       </div>
-      <span class="footer-copy">&copy; 2026 Anes Matallah</span>
+      <span class="footer-copy" data-i18n="footer_copy">&copy; 2026 Anes Matallah</span>
     </div>
   </footer>
-
   <script src="script.js"></script>
 </body>
-
-</html>
-  <script src="script.js"></script>
-</body>
-
 </html>
