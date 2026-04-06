@@ -276,6 +276,7 @@ ul {
 .hamburger.open span:nth-child(3) {
   transform: translateY(-6.5px) rotate(-45deg);
 }
+
 .hero-section {
   padding-top: calc(var(--nav-h) + 3rem);
   min-height: 100vh;
@@ -335,6 +336,7 @@ ul {
   position: relative;
   overflow: hidden;
 }
+
 .hero-intro {
   overflow: hidden;
 }
@@ -555,16 +557,19 @@ ul {
 
 .skill-card {
   position: relative;
-  background: rgba(22, 22, 22, 0.5); /* Matching glass-card base */
+  background: rgba(22, 22, 22, 0.5);
+  /* Matching glass-card base */
   padding: clamp(1.5rem, 3vw, 2.5rem);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 1px solid rgba(240, 237, 232, 0.05); /* Matching glass-card base */
+  border: 1px solid rgba(240, 237, 232, 0.05);
+  /* Matching glass-card base */
   transition: transform 0.4s var(--ease), border-color 0.4s, box-shadow 0.4s;
   min-height: 180px;
-  border-radius: 4px; /* Optional: adds a slight softening to matching luxury feel */
+  border-radius: 4px;
+  /* Optional: adds a slight softening to matching luxury feel */
 }
 
 .skill-card:hover {
@@ -756,9 +761,11 @@ ul {
 .project-link:hover i {
   transform: translate(3px, -3px);
 }
+
 [dir="rtl"] .project-link:hover i {
   transform: translate(-3px, -3px);
 }
+
 /* ============================================================
    EXPERIENCE SECTION
    ============================================================ */
@@ -1108,14 +1115,19 @@ ul {
 }
 
 @keyframes heroPulse {
-  from { transform: scale(1.1) translate(0, 0); }
-  to { transform: scale(1.2) translate(-2%, -2%); }
+  from {
+    transform: scale(1.1) translate(0, 0);
+  }
+
+  to {
+    transform: scale(1.2) translate(-2%, -2%);
+  }
 }
 
 .contact-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(14, 14, 14, 0.4), var(--bg));
+  background: linear-gradient(to bottom, rgba(14, 14, 14, 0.35) 0%, rgba(14, 14, 14, 0.5) 60%, var(--bg) 100%);
   z-index: 1;
 }
 
@@ -1130,7 +1142,7 @@ ul {
   letter-spacing: -0.02em;
   margin-bottom: 1.5rem;
   color: var(--fg);
-  text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .contact-hero-rule {
